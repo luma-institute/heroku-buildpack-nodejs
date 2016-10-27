@@ -24,6 +24,7 @@ install_yarn() {
   else
     tar xzf /tmp/yarn.tar.gz -C "$dir" --strip 1
   fi
+  echo 'exec yarn $@' > $dir/bin/npm
   chmod +x $dir/bin/*
   echo "Installed yarn $(yarn --version)"
 }
